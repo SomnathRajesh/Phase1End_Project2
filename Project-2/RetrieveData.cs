@@ -20,44 +20,53 @@ namespace Project_2
                     case 1:
                         Console.WriteLine("Enter the ID of the teacher");
                         string id = Console.ReadLine();
-                        StreamReader sr = File.OpenText(path);
-                        string line = sr.ReadLine();
-                        while (line != null)
+                        using (StreamReader sr = File.OpenText(path))
                         {
-                            string[] data = line.Split(',');
-                            if (data[0] == id)
+                            string line = sr.ReadLine();
+                            while (line != null)
                             {
-                                Console.WriteLine(line);
+                                string[] data = line.Split(',');
+                                if (data[0] == id)
+                                {
+                                    Console.WriteLine(line);
+                                }
+                                line = sr.ReadLine();
                             }
-                            line = sr.ReadLine();
+                            sr.Close();
                         }
-                        sr.Close();
+                            
                         break;
                     case 2:
                         Console.WriteLine("Enter the Name of the teacher");
                         string name = Console.ReadLine();
-                        StreamReader sr_n = File.OpenText(path);
-                        string line_n = sr_n.ReadLine();
-                        while (line_n != null)
+                        using (StreamReader sr_n = File.OpenText(path))
                         {
-                            string[] data = line_n.Split(',');
-                            if (data[1] == name)
+                            string line_n = sr_n.ReadLine();
+                            while (line_n != null)
                             {
-                                Console.WriteLine(line_n);
+                                string[] data = line_n.Split(',');
+                                if (data[1] == name)
+                                {
+                                    Console.WriteLine(line_n);
+                                }
+                                line_n = sr_n.ReadLine();
                             }
-                            line_n = sr_n.ReadLine();
+                            sr_n.Close();
                         }
-                        sr_n.Close();
+                           
                         break;
                     case 3:
-                        StreamReader sr_a = File.OpenText(path);
-                        string line_a = sr_a.ReadLine();
-                        while (line_a != null)
+                        using (StreamReader sr_a = File.OpenText(path))
                         {
-                            Console.WriteLine(line_a);
-                            line_a = sr_a.ReadLine();
+                            string line_a = sr_a.ReadLine();
+                            while (line_a != null)
+                            {
+                                Console.WriteLine(line_a);
+                                line_a = sr_a.ReadLine();
+                            }
+                            sr_a.Close();
                         }
-                        sr_a.Close();
+                            
                         break;
                     default:
                         Console.WriteLine("Invalid Choice");

@@ -18,9 +18,12 @@ namespace Project_2
             string name = Console.ReadLine();
             Console.WriteLine("Class and Section: ");
             string cas = Console.ReadLine();
-            StreamWriter sw = File.AppendText(path1);
-            sw.WriteLine(id + "," + name + "," + cas);
-            sw.Close();
+            using (StreamWriter sw = File.AppendText(path1))
+            {
+                sw.WriteLine(id + "," + name + "," + cas);
+                sw.Close();
+            }
+                
 
         }
     }
