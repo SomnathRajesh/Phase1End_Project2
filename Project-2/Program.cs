@@ -18,6 +18,7 @@ internal class Program
                 case 1:
                     StoreData storeData = new StoreData();
                     storeData.Save();
+                    Console.WriteLine("Data saved successfully");
                     break;
                 case 2:
                     RetrieveData retrieveData = new RetrieveData();
@@ -26,6 +27,7 @@ internal class Program
                 case 3:
                     UpdateData updateData = new UpdateData();
                     updateData.Update();
+                    Console.WriteLine("Data updated successfully");
                     break;
                 default:
                     Console.WriteLine("Invalid Entry!!");
